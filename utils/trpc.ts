@@ -50,7 +50,7 @@ export const trpc = createTRPCNext<AppRouter>({
       ],
     }
   },
-  ssr: true,
+  ssr: false,
 })
 
 export type RouterOutput = inferRouterOutputs<AppRouter>
