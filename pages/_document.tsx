@@ -7,13 +7,13 @@ export default function Document() {
       <Head>
         <Script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=%REACT_APP_G_TAG%"
+          src="https://www.googletagmanager.com/gtag/js?id=%NEXT_PUBLIC_G_TAG%"
         ></Script>
         <Script id="gtag">
           {`window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '%REACT_APP_G_TAG%');`}
+          gtag('config', '%NEXT_PUBLIC_G_TAG%');`}
         </Script>
         <link
           href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
