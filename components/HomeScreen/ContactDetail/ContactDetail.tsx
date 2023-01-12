@@ -1,4 +1,5 @@
 import React from "react"
+import { Link, Text } from "rebass"
 
 type ContactDetailProps = {
   type: "github" | "linkedin" | "email"
@@ -26,14 +27,23 @@ export const ContactDetail: React.FC<ContactDetailProps> = ({ type }) => {
   }
   const { iconClassName, href } = contactTypeToDetails[type]
   return (
-    <a
-      className="flex items-center cursor-pointer hover:scale-105 transition-all"
+    <Link
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        cursor: "pointer",
+        ":hover": { transform: "scale(1.05)" },
+        transition: "all 0.3s",
+        color: "black",
+        textDecoration: "none",
+      }}
       href={href}
       target="_blank"
-      rel="noreferrer"
     >
       <i className={`${iconClassName}`} />
-      <p className="text-sm ml-1 mr-4">{type}</p>
-    </a>
+      <Text sx={{ fontSize: 14, marginRight: "1rem", marginLeft: "0.25rem" }}>
+        {type}
+      </Text>
+    </Link>
   )
 }
