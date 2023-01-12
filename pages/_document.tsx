@@ -1,9 +1,20 @@
 import { Html, Head, Main, NextScript } from "next/document"
+import Script from "next/script"
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=%REACT_APP_G_TAG%"
+        ></Script>
+        <Script id="gtag">
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '%REACT_APP_G_TAG%');`}
+        </Script>
         <link
           href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
           rel="stylesheet"
